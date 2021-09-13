@@ -1,16 +1,10 @@
-function Login() {
-    var done = 0;
-    var usuario = document.getElementsByName('username')[0].value;
-    usuario = usuario.toLowerCase();
-    var senha = document.getElementsByName('password')[0].value;
-    seha = senha.toLowerCase();
-  
-    if (usuario == "bcf" && senha == "bcf") {
-      window.location = "index.html";
-      done = 1;
-    }
-    if (done == 0) {
-      alert("Dados incorretos, tente novamente");
-  
-    }
+function login() {
+  var email = document.getElementById('txtemail')
+  var senha = document.getElementById('txtsenha')
+
+  if (email.value.length == 1 && senha.value.length == 1 ){
+    window.location.href = "http://pt.stackoverflow.com";
+  }else{
+    window.alert('Login ou senha incorreto')
+  }
   }
