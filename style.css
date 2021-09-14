@@ -102,6 +102,8 @@ body {
 
 .section {
   padding: calc(5rem + var(--header-height)) 0;
+  text-align: center;
+  
 }
 
 .section .title {
@@ -118,6 +120,7 @@ body {
 
 .section header strong {
   color: var(--base-color);
+  text-align: center;
 }
 
 #header {
