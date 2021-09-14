@@ -12,10 +12,13 @@ function login() {
   function enviar(){
     var valor = document.getElementById('valor')
     var roud1 = document.getElementsByName('novins')
+
+    //window.alert `valor ${valor}`
     
       if (valor.value.length >=1 ){
           if (roud1[0].checked){
-            window.alert('receita')
+            var receita = Number(valor.value) 
+            window.alert `receita teste ${receita}`
           }else if (roud1[1].checked) {
             window.alert('despesas')
           }
