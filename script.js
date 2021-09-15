@@ -17,7 +17,7 @@ function login() {
     
       if (valor.value.length >=1 ){
           if (roud1[0].checked){
-            var receita = Number(valor.value) 
+            var receita = Number(valor.value) ;
             window.alert `receita teste ${receita}`
           }else if (roud1[1].checked) {
             window.alert('despesas')
