@@ -1,3 +1,4 @@
+//cod até 20:00
 const transactionsUl = document.querySelector('#transactions')
 
 const dummyTransactions =[
@@ -20,8 +21,14 @@ const addTransactionIntoDOM = transaction => {
     transactionsUl.append(li)
 }
 
+const updateBalanceValues = () => {
+    const transactionsAmounts = dummyTransactions.map(transaction => transaction.amount)
+    console.log(transactionsAmounts)
+}
+
 const init = () => {
     dummyTransactions.forEach(addTransactionIntoDOM)
+    updateBalanceValues()
 }
 
 init()
