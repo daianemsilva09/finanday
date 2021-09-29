@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <!-- Page Info -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinanD@y</title>
+
+    <!-- Icones -->
+    <link rel="stylesheet" href="assets/fonts/style.css" />
+
+    <!-- SWIPER -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header">
+      <nav class="container">
+        <a class="logo" href="#">Finan<span>D@y</span></a>
+        <div class="toggle icon-menu"></div>
+        <div class="toggle icon-close"></div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <!--
+      <section class="section" id="principal">
+        <div class="principal">
+          Poupança  <input type="number" name="poupanca" id="poupanca">
+          <br><br>Total conta corrente<input type="number" name="radcc" id="cc">
+          Bradesco<input type="number" name="radbra" id="txtbra">
+          Nu<input type="number" name="radnub" id="txtnub">
+          C6<input type="number" name="rad" id="txtc6btot">
+          Caixa<input type="number" name="cc" id="txtportot">
+          Picpay<input type="number" name="cc" id="txtportot">
+          Mercado pago<input type="number" name="cc" id="txtportot">
+        </div>
+          <div class="cc">
+          <br>Cartão de credito <input type="number" name="radcc" id="cc">
+            Bradesco<input type="number" name="radbra" id="txtbra">
+            Itau<input type="number" name="radita" id="txtita">
+            Nu<input type="number" name="radnub" id="txtnub">
+            C6<input type="number" name="rad" id="txtc6btot">
+            Porto Seguro<input type="number" name="cc" id="txtportot">
+          </div>
+          <div class="conta">
+    
+          </div>
+          <div class="ccparc"></div>
+          <div class="cc">
+          <br>Cartão de credito (parcelado) <input type="number" name="cc" id="poupanca">
+            Bradesco<input type="number" name="cc" id="poupanca">
+            Itau<input type="number" name="cc" id="poupanca">
+            Nu<input type="number" name="cc" id="poupanca">
+            C6<input type="number" name="cc" id="poupanca">
+            Porto Seguro<input type="number" name="cc" id="poupanca">
+          </div>
+          <br><br>Boletos<input type="number" name="boletos" id="poupanca">
+          <br><br>Economizou mês <input type="number" name="ecmes" id="poupanca">
+          <br><br>Gastou Mês <input type="number" name="gasmes" id="poupanca">
+        </div>
+      </section>
+-->
+      <div class="divider-1"></div>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+          <div class="inserir">
+            <p>
+            <input type="radio"  name="novins" id="novorec"checked>
+              <label for="novorec">Receita</label>
+            <input type="radio" name="novins" id="novodes">
+              <label for="novodes">Despesa</label>
+              <select name="testn" id="testi"></select>
+            </p>
+
+            <p>
+              <label for="lavalor">Valor</label>
+                <input type="number" name="valor" id="valor"><br>
+              <label for="lavalor">Fixa</label>
+                <input type="checkbox" name="fixo" id="fixo">
+            <p>
+              <input type="radio" name="novdouc" id="novodes">
+                <label for="labcredito">Credito</label>
+              <input type="radio"  name="novdouc" id="novorec"checked>
+                <label for="labdebito">Debito</label>
+              
+            </p> Crédito
+            <div class="credito">
+              <input type="radio"  name="novcred" id="novbra"checked>
+                <label for="labcredito">Bradesco</label>
+              <input type="radio"  name="novcred" id="novita">
+                <label for="labcredito">Itau</label>
+              <input type="radio"  name="novcred" id="novnub">
+                <label for="labcredito">Nubank</label>
+              <input type="radio"  name="novcred" id="novc6b">
+                <label for="labcredito">C6</label>
+              <input type="radio"  name="novcred" id="novpor">
+                <label for="labcredito">Porto Seguro</label>
+              <input type="radio"  name="novcred" id="novint">
+                <label for="labcredito">Inter</label>
+              <br>Parcelas<input type="number">
+            </div> Debito
+            <div class="debito">
+              <input type="radio" name="novdeb" id="dtbra"checked>
+                <label for="labdeb">Bradesco</label>
+              <input type="radio" name="novdeb" id="dtnub">
+                <label for="labdeb">Nubank</label>
+                <input type="radio" name="novdeb" id="dtc6b">
+                <label for="labdeb">C6</label>
+                <input type="radio" name="novdeb" id="dtcai">
+                <label for="labdeb">Caixa</label>
+                <input type="radio" name="novdeb" id="dtpic">
+                <label for="labdeb">PicPay</label>
+                <input type="radio" name="novdeb" id="dtmer">
+                <label for="labdeb">Mercado pago</label>
+            </div>
+              <br><input type="button" value="enviar" onclick="enviar()">
+          </p>
+          </div>
+      </section>
+
+      <div class="divider-1"></div>
+    </main>
+
+    <footer class="section">
+      <div class="container grid">
+        <div class="brand">
+          <a class="logo logo-alt" href="#home">Finan<span>D@y</span></a>
+          <p>©2021 Daiane Silva</p>
+          <p>Todos os direitos reservados.</p>
+        </div>
+
+        <div class="social grid">
+          <a href="https://instagram.com" target="_blank">
+            <i class="icon-instagram"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank">
+            <i class="icon-facebook"></i>
+          </a>
+          <a href="https://youtube.com" target="_blank">
+            <i class="icon-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#home" class="back-to-top"><i class="icon-arrow-up"></i></a>
+
+    <!-- swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- scrollreveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- mains.js -->
+    <script src="main.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
