@@ -100,7 +100,7 @@ form.addEventListener('submit', event => {
         name: transactionName,
         amount: transactionAmount
     }
-
+     /*inserindo o transaction no dummyTransactions */
     dummyTransactions.push(transaction)
 
     //console.log(transaction)
