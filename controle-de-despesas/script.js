@@ -12,8 +12,22 @@ const inputTransactionName = document.querySelector('#text')
 /*input do valor id*/
 const inputTransactionAmount = document.querySelector('#amount')
 
-//console.log({inputTransactionAmount, inputTransactionName})
 
+/*adicina no Json*/
+const localStorageTransactions = JSON.parse(localStorage
+    .getItem('transactions'))
+
+    /*verifica se não for false deixa vazia*/
+let transactions = localStorage
+.getItem('transactions') !== null ? localStorageTransactions : [] 
+
+const removeTransaction = ID => {
+    /* Apaga o da lista */
+    transactions = transactions.filter(transaction => 
+        transaction.id !== ID)
+    updateLocalStorage()
+    init()
+}
 
 /*Vetor de dados*/ 
 const addTransactionIntoDOM = transaction => {
@@ -29,9 +43,14 @@ const addTransactionIntoDOM = transaction => {
     /*'classList.add' Insere no Html a clase do CSSClass*/
     li.classList.add(CSSClass)
     /*inserindo no Html li*/
+    /*e botão na função*/
     li.innerHTML =`
-    
-    ${transaction.name} <span> ${operator} R$ ${amountWithoutOperator}</span>`
+    ${transaction.name} 
+    <span> ${operator} R$ ${amountWithoutOperator}</span>
+    <button class="delete-btn" onClick="removeTransaction(${transaction.id})">
+        x
+    </button>
+    `
 /**/
     transactionsUl.append(li)
     /*mostra ultima filha  elemento na ul */
@@ -40,7 +59,7 @@ const addTransactionIntoDOM = transaction => {
 /*função que insere somente os valores de amount em um vetor como valor*/
 const updateBalanceValues = () => {
     /*na função faz um array só com dados de amount em numero*/
-    const transactionsAmounts = dummyTransactions
+    const transactionsAmounts = transactions
         .map(transaction => transaction.amount)
     /*percorre o  transactionsAmonts(só os valores) aramazena tudo no accumulator*/
     const total = transactionsAmounts
@@ -67,16 +86,25 @@ const updateBalanceValues = () => {
 }
 /*quando a pagina for carregada vai inserir no Dom*/
 const init = () => {
+    /*limpando pra não duplicar */
+    transactionsUl.innerHTML = ''
     /*loop vai percorrer a função e inserir no Dom quando carregar a pagina*/
-    dummyTransactions.forEach(addTransactionIntoDOM)
+    transactions.forEach(addTransactionIntoDOM)
     /*Chama a função*/
     updateBalanceValues()
 }
+
+
+
 /*inicia aqui chamando a função*/
 init()
 
+const updateLocalStorage = () =>{
+    localStorage.setItem('transactions', JSON.stringify(transactions))
+}
 /*pega um numero aleatório entre 1000*/
 const generateID = () => Math.round(Math.random() * 1000)
+
 
 
 /*evento quando for no submit */
@@ -98,10 +126,20 @@ form.addEventListener('submit', event => {
     const transaction = {
         id: generateID(), 
         name: transactionName,
-        amount: transactionAmount
+        amount: Number(transactionAmount)
     }
-     /*inserindo o transaction no dummyTransactions */
-    dummyTransactions.push(transaction)
+    //  console.log(transaction)
+    
+    /*inserindo os valores recebidos na transaction */
+    transactions.push(transaction)
+    /*invocou init*/
+    init()
+
+    updateLocalStorage()
+
+    /*limpando as variaveis*/
+    inputTransactionName.value= ''
+    inputTransactionAmount.value = ''
 
     //console.log(transaction)
 })
